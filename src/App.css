@@ -1,33 +1,314 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.layout-main {
+  background-color: #F9FEFF;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.layout-main .side-bar {
+  position: fixed;
+  width: 130px;
+  background-color: #023054;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.layout-main .side-bar .brand {
+  height: 100px;
+  line-height: 100px;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 16px;
   color: white;
+  font-weight: 500;
+  background: #022d4e;
 }
 
-.App-link {
-  color: #61dafb;
+.layout-main .side-bar ul {
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.layout-main .side-bar ul li {
+  list-style: none;
+  text-align: center;
+  font-size: 15px;
+  color: #e9e9e9;
+  padding: 40px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
 }
+
+.layout-main .side-bar ul li:hover {
+  padding-left: 25px;
+}
+
+.layout-main .side-bar ul li.active {
+  background-color: #36C4CE;
+}
+
+.layout-main .nav-bar {
+  position: fixed;
+  width: calc(100% - 130px);
+  height: 100px;
+  background-color: white;
+  left: 130px;
+  top: 0;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 2;
+}
+
+.layout-main .nav-bar .nav-right {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.layout-main .nav-bar .nav-right li {
+  list-style: none;
+  padding: 0 25px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #999999;
+  border-bottom: 2px solid transparent;
+}
+
+.layout-main .nav-bar .nav-right li.active {
+  color: #36C4CE;
+  border-color: #36C4CE;
+}
+
+.layout-main .nav-bar .nav-left {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Montserrat", sans-serif;
+  margin-right: 40px;
+}
+
+.layout-main .nav-bar .nav-left select {
+  margin-left: 10px;
+  font-family: "Montserrat", sans-serif;
+  height: 30px;
+  font-size: 16px;
+  color: #6b6b6b;
+  border: none;
+  outline: none;
+}
+
+.layout-main .content-main {
+  position: fixed;
+  width: calc(100% - 130px);
+  height: calc(100vh - 100px);
+  left: 130px;
+  top: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: auto;
+  padding: 0 10px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+h1,
+h3 {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #666666;
+}
+
+.max-width-1400 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-container {
+  padding-top: 50px;
+}
+
+.content-container .content-head {
+  margin-bottom: 30px;
+}
+
+.content-card {
+  background: white;
+  width: 100%;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.content-card .card-header,
+.content-card .card-content {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content-card .card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.content-card .card-header .header-type {
+  padding: 10px 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  color: #022d4e;
+  font-weight: 500;
+}
+
+.form-group {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #f3f3f3;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.form-group .content-form {
+  width: 100%;
+  max-width: 500px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group .content-form label {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.form-group input[type="file"] {
+  background: transparent;
+  height: unset;
+}
+
+.form-group textarea {
+  min-height: 200px;
+  padding: 10px;
+}
+
+.form-group label {
+  width: 150px;
+  display: block;
+}
+
+.text-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.text-container .counter {
+  float: right;
+}
+
+.form-group.custom-delivery input,
+.form-group.custom-delivery select {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #f3f3f3;
+  padding: 0 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.form-group.custom-delivery select {
+  max-width: 190px;
+}
+
+.form-group.custom-delivery input[type="file"] {
+  background: white !important;
+  height: unset;
+}
+
+.btn-main {
+  padding: 10px 25px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  background-color: #022d4e;
+  border: none;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-main.disabled {
+  background-color: #7d7f80;
+  cursor: not-allowed;
+}
+
+.info {
+  font-size: 12px;
+  color: #999999;
+}
+
+.minmal {
+  width: 750px;
+}
+
+.minmal .btn-main {
+  float: right;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+
+.clear {
+  clear: both;
+}
+
+.hide {
+  display: none !important;
+}
+/*# sourceMappingURL=app.css.map */
