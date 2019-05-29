@@ -15,7 +15,9 @@ const Button = props => {
         return props.onClick ? props.onClick(e) : null;
       }}
       className={`btn ${props.color} ${props.loading &&
-        "loading"} ${props.block && "block"} ${props.className}`}
+        "loading"} ${props.block && "block"} ${props.className} ${
+        props.variant
+      }`}
       disabled={props.disabled}
       type={props.type}
       value={props.value}
@@ -29,7 +31,13 @@ const Button = props => {
   );
 };
 Button.propTypes = {
-  color: PropTypes.oneOf(["primary", "success", "danger", "default"]),
+  color: PropTypes.oneOf([
+    "primary",
+    "secondary",
+    "success",
+    "danger",
+    "default"
+  ]),
   onClick: PropTypes.func,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -37,6 +45,7 @@ Button.propTypes = {
   block: PropTypes.bool,
   icon: PropTypes.node,
   className: PropTypes.string,
+  variant: PropTypes.oneOf(["solid", "outlined"]),
   type: PropTypes.string
 };
 
@@ -47,6 +56,7 @@ Button.defaultProps = {
   onClick: null,
   style: {},
   className: "",
+  variant: "solid",
   type: "button"
 };
 

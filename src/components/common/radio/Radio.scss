@@ -5,7 +5,7 @@ $position: absolute;
 $left: -9999px;
 
 @mixin labeling() {
-  font-family: $secondary-font;
+  font-family: $primary-font;
   font-size: $default-font-size;
   position: relative;
   padding-left: 28px;
@@ -15,26 +15,26 @@ $left: -9999px;
   color: darken($white-color, 40%);
 }
 
-@mixin label-before($color: $white-color) {
+@mixin label-before($color: $primary-color) {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
   width: 18px;
   height: 18px;
-  border: 1px solid darken($white-color, 5%);
+  border: 2px solid darken($color, 5%);
   border-radius: 100%;
-  background: $color;
+  background: transparent;
 }
 
 @mixin label-after($color:$primary-color) {
   content: '';
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: $color;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 6px;
+  left: 6px;
   border-radius: 100%;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -72,7 +72,7 @@ $left: -9999px;
       @include labeling();
 
       &:before {
-        @include label-before();
+        @include label-before(lighten($primary-color, 20%));
       }
 
       &:after {

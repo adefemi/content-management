@@ -5,7 +5,7 @@ $position: absolute;
 $left: -9999px;
 
 @mixin labeling() {
-  font-family: $secondary-font;
+  font-family: $primary-font;
   font-size: $default-font-size;
   position: relative;
   padding-left: 28px;
@@ -15,28 +15,29 @@ $left: -9999px;
   color: lighten($black-color, 50%);
 }
 
-@mixin label-before($color:$white-color) {
+@mixin label-before($color:$primary-color) {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
-  width: 18px;
-  height: 18px;
-  border: 1px solid darken($white-color, 5%);
-  border-radius: 2px;
-  background: $color;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: lighten($color, 20%);
 }
 
-@mixin label-after($color:$primary-color) {
+@mixin label-after($color:$white-color) {
   content: '';
-  width: 12px;
-  height: 12px;
-  background: $color;
+  width: 10px;
+  height: 5px;
+  background: transparent;
   position: absolute;
+  border: 2px solid transparent;
+  border: solid $color;
+  border-width: 0 0 2px 2px;
+
   top: 4px;
   left: 4px;
-  border-radius: 2px;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 
 }
@@ -60,6 +61,7 @@ $left: -9999px;
         opacity: 1;
         -webkit-transform: scale(1);
         transform: scale(1);
+        transform: rotate(-45deg);
       }
     }
   }
@@ -81,6 +83,7 @@ $left: -9999px;
         opacity: 0;
         -webkit-transform: scale(0);
         transform: scale(0);
+        transform: rotate(0deg);
       }
     }
   }
@@ -91,11 +94,11 @@ $left: -9999px;
       opacity: .7;
 
       &:before {
-        @include label-before(darken($white-color, 5%));
+        @include label-before(darken($white-color, 30%));
       }
 
       &:after {
-        @include label-after(lighten($primary-color, 10%));
+        @include label-after(lighten($white-color, 10%));
       }
     }
   }

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Icon from "react-icons-kit";
 import PropTypes from "prop-types";
-import { arrows_down as arrowDown } from "react-icons-kit/linea/arrows_down";
-import { arrows_up as arrowUp } from "react-icons-kit/linea/arrows_up";
+import { Icon } from "../icons";
 
 import "./Select.css";
 import { getNewProps } from "../input/Input";
@@ -142,7 +140,7 @@ const toggleSelect = count => {
 
   if (space < 450) {
     mainSelectCon.style.zIndex = "10000";
-    selectCon.style.bottom = "100%";
+    selectCon.style.bottom = "0";
     selectCon.style.top = "unset";
   } else {
     mainSelectCon.style.zIndex = "10000";
@@ -256,7 +254,7 @@ const Select = props => {
           props.disabled ? "disabled" : ""
         }`}
       >
-        {props.iconLeft}
+        <span className="left-icon">{props.iconLeft}</span>
         <input
           type="text"
           className={`selectInput${count} ${props.disabled ? "disabled" : ""}`}
@@ -271,19 +269,21 @@ const Select = props => {
           {...newProps}
         />
         {props.showDropDown && (
-          <Icon
+          <div
             onClick={() => toggleSelect(count)}
             className={`select-icon-up select${count} closed`}
-            icon={arrowUp}
-          />
+          >
+            <Icon type="md" name="ic_arrow_drop_up" size={20} />
+          </div>
         )}
 
         {props.showDropDown && (
-          <Icon
+          <div
             onClick={() => null}
             className={`select-icon-down select${count}`}
-            icon={arrowDown}
-          />
+          >
+            <Icon type="md" name="ic_arrow_drop_down" size={20} />
+          </div>
         )}
       </div>
 
