@@ -1,0 +1,111 @@
+@import "../../styles/theme.scss";
+
+.btn-main {
+    background: $primary-color;
+}
+
+.btn {
+    font-family: $secondary-font;
+    background: transparent;
+    border-radius: 2px;
+    padding: 8px 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:focus,
+.btn:active,
+.btn-sml:focus,
+.btn-sml:active,
+.btn {
+    outline: none;
+    position: relative;
+    text-decoration: none;
+
+    -webkit-box-shadow: -3px 21px 42px -38px rgba(86, 128, 249, 1);
+    -moz-box-shadow: -3px 21px 42px -38px rgba(86, 128, 249, 1);
+    box-shadow: -3px 21px 42px -38px rgba(86, 128, 249, 1);
+
+
+    &.primary {
+        background: $primary-color;
+
+        &:hover {
+            background: darken($primary-color, 10%);
+        }
+    }
+
+    &.danger {
+        background: $danger-color;
+
+        &:hover {
+            background: darken($danger-color, 10%);
+        }
+    }
+
+    &.success {
+        background: $success-color;
+
+        &:hover {
+            background: darken($success-color, 10%);
+        }
+    }
+
+    &.default {
+        background: $white-color;
+        color: $black-color;
+        box-shadow: 0 2px 5px rgba($black-color, 0.1);
+
+        &:hover {
+            background: darken($white-color, 20%);
+        }
+    }
+
+    &.loading {
+        opacity: 0.7;
+
+        &>span {
+            margin-right: 6px;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:disabled,
+    .disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &:active,
+    &:focus {
+        outline: none !important;
+        border: none !important;
+    }
+
+    &.block {
+        width: 100%;
+        display: block;
+    }
+
+    .icon-left {
+        padding-right: 10px;
+    }
+
+    .content {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

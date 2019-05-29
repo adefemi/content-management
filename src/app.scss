@@ -1,15 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
-
-$fontMont : 'Montserrat',
-sans-serif;
-$fontRob : 'Roboto',
-sans-serif;
+@import "./components/styles/theme.scss";
 
 html,
 body {
     margin: 0;
     padding: 0;
-    font-family: $fontRob;
+    font-family: $primary-font;
 }
 
 .layout-main {
@@ -83,7 +78,7 @@ body {
                 padding: 0 25px;
                 height: 100%;
                 display: flex;
-                font-family: $fontMont;
+                font-family: $secondary-font;
                 align-items: center;
                 color: #999999;
                 border-bottom: 2px solid transparent
@@ -99,12 +94,12 @@ body {
             height: 100%;
             display: flex;
             align-items: center;
-            font-family: $fontMont;
+            font-family: $secondary-font;
             margin-right: 40px;
 
             select {
                 margin-left: 10px;
-                font-family: $fontMont;
+                font-family: $secondary-font;
                 height: 30px;
                 font-size: 16px;
                 color: #6b6b6b;
@@ -133,7 +128,7 @@ h1,
 h3 {
     margin: 0;
     padding: 0;
-    font-family: $fontRob;
+    font-family: $primary-font;
     font-weight: 400;
     color: #666666
 }
@@ -268,7 +263,7 @@ h3 {
     background-color: #022d4e;
     border: none;
     outline: none;
-    font-family: $fontRob;
+    font-family: $primary-font;
     font-size: 16px;
     cursor: pointer;
 }

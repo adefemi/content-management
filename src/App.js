@@ -1,6 +1,6 @@
 import React from "react";
 import "./app.css";
-import ContentManagement from "./components/content_management";
+import ContentManagement from "./components/ContentManagement/ContentManagement";
 
 function App() {
   return (

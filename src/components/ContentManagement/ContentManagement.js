@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
-import Layout from "./layout";
-import { productConfig } from "./data";
+import Layout from "../generics/layout";
+import { productConfig } from "../generics/data";
 import axios from "axios";
 
 const audioFormats = Object.freeze(["mp3", "wav", "aff", "jpg", "jpeg"]);
