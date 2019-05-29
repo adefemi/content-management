@@ -25,5 +25,7 @@ yarn-error.log*
 src/**/*.css
 src/**/*.css.map
 
+yarn.lock
+
 .vscode
 .vscode*
